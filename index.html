@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry Harshada ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffd1dc, #f7a8c4, #ffe4ec);
+    overflow: hidden;
+}
+
+.card {
+    width: 90%;
+    max-width: 420px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px #c75b8550;
+    position: relative;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 65px;
+    animation: beat 1s infinite;
+}
+
+h1 {
+    color: #e75480;
+    margin: 15px 0;
+}
+
+p {
+    color: #66515b;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+button {
+    border: none;
+    padding: 13px 25px;
+    margin: 20px 5px 0;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #e75480;
+    color: white;
+}
+
+#yes:hover {
+    transform: scale(1.1);
+    background: #d6336c;
+}
+
+#no {
+    background: #ffe1eb;
+    color: #d6336c;
+}
+
+#message {
+    display: none;
+    margin-top: 20px;
+    color: #e75480;
+    font-weight: bold;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+.floating {
+    position: absolute;
+    bottom: -30px;
+    animation: floatUp 7s linear infinite;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="heart">❤️</div>
+
+    <h1>I'm Sorry, Harshada!</h1>
+
+    <p>
+        Hey Harshada... 🥺<br><br>
+
+        I know I might have hurt you, and honestly,
+        that was never what I wanted to do.<br><br>
+
+        I may not always say the right things,
+        but your friendship means a lot to me.<br><br>
+
+        I'm not asking you to forget what happened.
+        I just hope you can give me a chance
+        to make things right.<br><br>
+
+        I'm genuinely sorry. 💗
+    </p>
+
+    <h3 style="color:#e75480; margin-top:20px;">
+        Will you forgive me? 🥹
+    </h3>
+
+    <button id="yes" onclick="forgive()">
+        Yes ❤️
+    </button>
+
+    <button id="no" onclick="notYet()">
+        Not yet 🙈
+    </button>
+
+    <div id="message">
+        YAYYY!! 🥹💗<br>
+        Thank you, Harshada!<br>
+        Your friendship means the world to me.
+    </div>
+</div>
+
+<script>
+function forgive() {
+    document.getElementById("message").style.display = "block";
+    document.getElementById("yes").style.display = "none";
+    document.getElementById("no").style.display = "none";
+    document.querySelector("h3").innerHTML =
+        "You're the best, Harshada! 💗";
+}
+
+function notYet() {
+    document.getElementById("no").innerHTML =
+        "I understand 🥺";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating";
+    heart.innerHTML = ["❤️","💗","💕","🌸","💖"][
+        Math.floor(Math.random() * 5)
+    ];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 7000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
